@@ -25,6 +25,10 @@ Add the following line into your active admin resource:
 
 The Import button should now appear. Click it and upload a CSV file with a header row corresponding to your model attributes. Press submit. Profit.
 
+   active_admin_importable_with_end_block
+
+This has the same function as the active_admin_importable but the block is executed at the end of the parsing loop. When a block is given the data is collected in an array and the block is called with that array once istead of calling it for each row.
+
 ## Custom Import Behavior
 
 Need to do something special with the import? active_admin_importable accepts an optional block that will be called on each row, replacing the default functionality ( calling create! on the associated model). The associated model and a hash of the current row will get passed into the block. For example:
